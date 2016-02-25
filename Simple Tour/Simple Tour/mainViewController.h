@@ -10,6 +10,7 @@
 #import "travellerInfoVC.h"
 #import "purchasingDetailsVC.h"
 #import "DayOrderVC.h"
+#import "loginViewController.h"
 @interface mainViewController : UIViewController
 <UITabBarDelegate>
 {
@@ -18,6 +19,8 @@
     UITabBarItem *item1;
     UITabBarItem *item2;
     UITabBarItem *item3;
+    UILabel *travellerLabel;
+    UIButton *logoutButton;
     travellerInfoVC *travellerInfo;
     purchasingDetailsVC *purchasingDetail;
     DayOrderVC *dayOrder;
@@ -28,4 +31,5 @@
 @property(strong, nonatomic)NSString *username;
 -(void)addCons;
 -(void)addConstrainsForChildviewcontroller:(UIViewController *)childViewController;
+-(void)logout;
 @end

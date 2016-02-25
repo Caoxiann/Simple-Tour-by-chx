@@ -22,7 +22,7 @@
 
 -(NSMutableArray *)getPlateNumbers
 {
-   plateNumbers=[[NSMutableArray alloc]initWithObjects:@"川A12306",@"川A95533",nil];
+   plateNumbers=[[NSMutableArray alloc]initWithObjects:@"川A12306",@"川A95533",@"川B13131",@"川D88888",nil];
     return plateNumbers;
 }
 
@@ -44,7 +44,7 @@
 
 -(NSMutableArray *)getDailyOrdersOfLeftTable
 {
-    dailyOrder=[[NSMutableArray alloc]initWithObjects:@"行程",@"酒店",@"门票", nil];
+    dailyOrder=[[NSMutableArray alloc]initWithObjects:@"门票",@"酒店",@"行程", nil];
     return dailyOrder;
 }
 
@@ -66,7 +66,7 @@
 
 -(NSMutableArray *)getSeatNumbers
 {
-    seatNumbers=[[NSMutableArray alloc]initWithObjects:@"4A", nil];
+    seatNumbers=[[NSMutableArray alloc]initWithObjects:@"4A",@"12C",@"14D",@"66B" ,nil];
     return  seatNumbers;
 }
 
@@ -91,20 +91,29 @@
 
 -(NSMutableArray *)getPlaces
 {
-    places=[[NSMutableArray alloc]initWithObjects:@"成电南门对面芒果酒店门口", nil];
+    places=[[NSMutableArray alloc]initWithObjects:@"成电南门对面芒果酒店门口",@"犀浦地铁站C出口",@"茶店子公交站",@"天府广场正中间", nil];
     return places;
 }
 
 -(NSMutableArray *)getTitleOfTravel
 {
-    NSMutableArray *titles=[[NSMutableArray alloc]initWithObjects:@"2016年2月14日 成都火把节一日游",@"2015年11月11日 成都光棍节party门票",@"2015年12月25日 南门芒果酒店一晚",@"2015年12月25日 西门草莓酒店一晚", nil];
+    NSMutableArray *titles=[[NSMutableArray alloc]init];
+    if (self.travelIndex==0) {
+        titles=[NSMutableArray arrayWithObjects:@"2015年11月11日 成都光棍节party门票", nil];
+    }else if (self.travelIndex==1){
+        titles=[NSMutableArray arrayWithObjects:@"2015年12月25日 南门芒果酒店一晚",@"2015年12月25日 西门草莓酒店一晚",@"成都希尔顿酒店两晚",@"九寨沟烟雨客栈一晚",@"青城山倾城酒店三晚",@"成都香格里拉大酒店一晚", nil];
+    }else if (self.travelIndex==2){
+        titles=[NSMutableArray arrayWithObjects:@"2016年2月14日 成都火把节一日游", nil];
+    }else{
+        titles=[NSMutableArray arrayWithObjects:@"2015年11月11日 成都光棍节party门票",@"2015年12月25日 南门芒果酒店一晚",@"2015年12月25日 西门草莓酒店一晚",@"2015年12月25日成都希尔顿酒店两晚",@"2015年12月25日九寨沟烟雨客栈一晚",@"2015年12月25日青城山倾城酒店三晚",@"2015年12月25日成都香格里拉大酒店一晚",@"2016年2月14日 成都火把节一日游", nil];
+    }
     
     return titles;
 }
 
 -(NSMutableArray *)getQuantities
 {
-    NSMutableArray *quantities=[[NSMutableArray alloc]initWithObjects:@"4",@"2",@"10",@"9", nil];
+    NSMutableArray *quantities=[[NSMutableArray alloc]initWithObjects:@"4",@"2",@"10",@"9",@"11",@"12", @"12",@"12",@"12",@"12",@"12",@"12",@"12",@"12",nil];
     return quantities;
 }
 

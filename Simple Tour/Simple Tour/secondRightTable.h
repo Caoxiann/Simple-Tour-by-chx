@@ -15,4 +15,8 @@
     UITableView *rightTable;
     TableData *data;
 }
+
+@property(nonatomic)NSInteger indexOfTravels;
+
+-(void)reloadTableData;
 @end

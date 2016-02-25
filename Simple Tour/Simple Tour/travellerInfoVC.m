@@ -101,4 +101,19 @@
 {
     NSLog(@"travellerInfo did disappear");
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0) {
+        myTable.placeIndex=0;
+    }else if (indexPath.row==1){
+        myTable.placeIndex=1;
+    }else if (indexPath.row==2){
+        myTable.placeIndex=2;
+    }else if (indexPath.row==3){
+        myTable.placeIndex=3;
+    }
+    [myTable reloadTableData];
+    
+}
 @end

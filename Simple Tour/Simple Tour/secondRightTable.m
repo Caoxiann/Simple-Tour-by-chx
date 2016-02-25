@@ -26,6 +26,8 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[rightTable]|" options:0 metrics:nil views:viewsDic]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[rightTable]|" options:0 metrics:nil views:viewsDic]];
     
+    data.travelIndex=10;
+    self.indexOfTravels=10;
     return self;
 }
 
@@ -35,6 +37,18 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.indexOfTravels==0) {
+        data.travelIndex=0;
+        return 5;
+    }else if (self.indexOfTravels==1){
+        data.travelIndex=1;
+        
+    }else if (self.indexOfTravels==2){
+        data.travelIndex=2;
+        
+    }else{
+        
+    }
     return [[data getTitleOfTravel]count];
     
 }
@@ -47,21 +61,39 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     secondRightTableCell *cell=[[secondRightTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"detailsCell"];
-    NSString *travller=@"游客:";
-    travller=[travller stringByAppendingString:[[data getTravellers]objectAtIndex:0]];
+    NSString *traveller=@"旅客:";
+    traveller=[traveller stringByAppendingString:[[data getTravellers]objectAtIndex:0]];
     
-    cell.titleLabel.text=[[data getTitleOfTravel]objectAtIndex:indexPath.row];
-    cell.timeLabel.text=[[data gettravelTimes]objectAtIndex:0];
+    if (self.indexOfTravels==0) {
+        cell.titleLabel.text=[[data getTitleOfTravel]objectAtIndex:0];
+        
+    }else if (self.indexOfTravels==1){
+        cell.titleLabel.text=[[data getTitleOfTravel]objectAtIndex:indexPath.row];
+        
+        
+    }else if (self.indexOfTravels==2){
+        cell.titleLabel.text=[[data getTitleOfTravel]objectAtIndex:0];
+        
+    }else{
+        cell.titleLabel.text=[[data getTitleOfTravel]objectAtIndex:indexPath.row];
+        
+    }
     cell.quantityLabel.text=[[data getQuantities]objectAtIndex:indexPath.row];
+    cell.timeLabel.text=[[data gettravelTimes]objectAtIndex:0];
     cell.orderLabel.text=[[data getOrderNumbers]objectAtIndex:0];
     cell.timeLabel.text=[[data gettravelTimes]objectAtIndex:0];
     cell.contactLabel.text=[[data getContacts]objectAtIndex:0];
-    cell.travellerLabel.text=travller;
+    cell.travellerLabel.text=traveller;
     cell.TravellerPhoneLabel.text=[[data getTravellerPhoneNumber]objectAtIndex:0];
     cell.contactPhoneLabel.text=[[data getContactPhoneNumber]objectAtIndex:0];
     [cell addCons];
 
     
     return cell;
+}
+
+-(void)reloadTableData
+{
+    [rightTable reloadData];
 }
 @end

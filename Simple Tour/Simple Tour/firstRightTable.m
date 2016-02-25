@@ -12,7 +12,7 @@
 
 -(instancetype)init
 {
-    UITableView *rightTable=[[UITableView alloc]init];
+    rightTable=[[UITableView alloc]init];
     rightTable.dataSource=self;
     rightTable.delegate=self;
     rightTable.translatesAutoresizingMaskIntoConstraints=NO;
@@ -46,17 +46,33 @@
     
     firstRightTableCell *cell=[[firstRightTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     cell.travellerLabel.text=[self.travellers objectAtIndex:0];
-    cell.seatNumberLabel.text=[self.seatNumbers objectAtIndex:0];
-    cell.plateNumberLabel.text=[self.plateNumbers objectAtIndex:1];
+    cell.seatNumberLabel.text=[self.seatNumbers objectAtIndex:self.placeIndex];
+    cell.plateNumberLabel.text=[self.plateNumbers objectAtIndex:self.placeIndex];
     cell.companyLabel.text=[self.companys objectAtIndex:0];
-    cell.placeLabel.text=[self.places objectAtIndex:0];
+    cell.placeLabel.text=[self.places objectAtIndex:self.placeIndex];
     cell.travelTimeLabel.text=[self.travelTimes objectAtIndex:0];
     cell.carNumberLabel.text=[self.carNumbers objectAtIndex:0];
     [cell addCons];
     
 
+    
     return cell;
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0) {
+        //
+    }else if (indexPath.row==1)
+    {
+        
+    }
+}
+
+-(void)reloadTableData
+{
+    [rightTable reloadData];
 }
 
 @end

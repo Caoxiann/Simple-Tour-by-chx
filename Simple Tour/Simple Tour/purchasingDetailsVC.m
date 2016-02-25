@@ -11,15 +11,12 @@
 @implementation purchasingDetailsVC
 -(instancetype)init
 {
-    TableData *data=[[TableData alloc]init];
+    data=[[TableData alloc]init];
     puchasingDetails=[[NSMutableArray alloc]init];
     puchasingDetails=[data getPurchasingDetailsOfLeftTable];
     leftTable=[[UITableView alloc]init];
     leftTable.delegate=self;
     leftTable.dataSource=self;
-    
-
-    
     return self;
 }
 
@@ -60,17 +57,28 @@
 -(void)addConstrains
 {
     UIView *rightTable=table.view;
-    NSLog(@"superview:%@",rightTable);
+    
     
     NSDictionary *viewsDic=[[NSDictionary alloc]init];
     viewsDic=NSDictionaryOfVariableBindings(leftTable,rightTable);
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[leftTable(1000)]" options:0 metrics:nil views:viewsDic]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[leftTable(200)]-0-[rightTable]|" options:0 metrics:nil views:viewsDic]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[rightTable]|" options:0 metrics:nil views:viewsDic]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[rightTable]|" options:0 metrics:nil views:viewsDic]];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"purchasing details did disappear");
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+    if (indexPath.row==0) {
+        table.indexOfTravels=0;
+    }else if (indexPath.row==1){
+        table.indexOfTravels=1;
+    }
+    [table reloadTableData];
 }
 @end

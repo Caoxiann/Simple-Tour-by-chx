@@ -16,7 +16,7 @@
     UITableView *leftTable;
     NSMutableArray *puchasingDetails;
     secondRightTable *table;
-    
+    TableData *data;
 }
 
 -(void)addConstrains;

@@ -29,6 +29,8 @@
     
 }
 
+@property(nonatomic)NSInteger travelIndex;
+
 -(instancetype)initWithTravellerInfoOfLeftTable;
 
 -(NSMutableArray *)getPurchasingDetailsOfLeftTable;

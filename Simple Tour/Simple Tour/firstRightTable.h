@@ -10,7 +10,9 @@
 #import "firstRightTableCell.h"
 @interface firstRightTable : UIViewController
 <UITableViewDataSource,UITableViewDelegate>
-
+{
+    UITableView *rightTable;
+}
 @property(strong, nonatomic)NSMutableArray *travellers;
 @property(strong, nonatomic)NSMutableArray *seatNumbers;
 @property(strong, nonatomic)NSMutableArray *plateNumbers;
@@ -18,4 +20,7 @@
 @property(strong, nonatomic)NSMutableArray *places;
 @property(strong, nonatomic)NSMutableArray *travelTimes;
 @property(strong, nonatomic)NSMutableArray *carNumbers;
+@property(nonatomic)NSInteger placeIndex;
+
+-(void)reloadTableData;
 @end

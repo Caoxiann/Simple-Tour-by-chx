@@ -21,7 +21,7 @@
         self.placeLabel=[[UILabel alloc]init];
         self.travelTimeLabel=[[UILabel alloc]init];
         self.carNumberLabel=[[UILabel alloc]init];
-        signButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+        signButton=[UIButton buttonWithType:UIButtonTypeSystem];
         [signButton setTitle:@"手动签到" forState:UIControlStateNormal];
         
         

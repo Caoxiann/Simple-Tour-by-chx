@@ -19,7 +19,7 @@
     rememberUsername=[[UILabel alloc]init];
     tikButton=[[UIButton alloc]init];
     
-    
+    self.view.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:loginButton];
     [self.view addSubview:logoImage];
     [self.view addSubview:usernameInput];
@@ -111,14 +111,15 @@
 -(void)enterTheMainVC:(NSNotification *)notification
 {
     mainViewController *mainVC=[[mainViewController alloc]init];
+    mainVC.username=[notification object];
     [self dismissViewControllerAnimated:NO completion:nil];
     [self presentViewController:mainVC animated:YES completion:nil];
-    mainVC.username=[notification object];
+    
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"disappeared!");
+    NSLog(@"login view controller disappeared!");
 }
 @end
