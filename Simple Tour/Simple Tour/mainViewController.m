@@ -37,6 +37,7 @@
     }
     
     logoutButton=[UIButton buttonWithType:UIButtonTypeSystem];
+    logoutButton.backgroundColor=[UIColor whiteColor];
     logoutButton.translatesAutoresizingMaskIntoConstraints=NO;
     logoutButton.titleLabel.textColor=[UIColor whiteColor];
     [logoutButton addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
@@ -52,7 +53,9 @@
         travellerLabel.text=self.username;
         [logoutButton setTitle:@"注销登录" forState:UIControlStateNormal];
     }
-   
+    
+    barOnButtom=[[buttomBar alloc]init];
+    NSLog(@"button:%@",barOnButtom);
     
     travellerInfo=[[travellerInfoVC alloc]init];
     purchasingDetail=[[purchasingDetailsVC alloc]init];
@@ -61,27 +64,29 @@
     [self addChildViewController:travellerInfo];
     [self addChildViewController:purchasingDetail];
     [self addChildViewController:dayOrder];
-    
+    [self.view addSubview:barOnButtom];
     [self.view addSubview:travellerInfo.view];
     [self.view addSubview:tabbar];
+    
     [tabbar addSubview:travellerLabel];
     [tabbar addSubview:logoutButton];
     
     [self addCons];
     [self addConstrainsForChildviewcontroller:travellerInfo];
+    [barOnButtom addConstraintsForSubviews];
     
 }
 
 -(void)addCons
 {
     NSDictionary *viewsDic=[[NSDictionary alloc]init];
-//    UITabBarItem *itemOne=[tabbar.items objectAtIndex:0];
-//    UITabBarItem *itemTwo=[tabbar.items objectAtIndex:1];
-//    UITabBarItem *itemThree=[tabbar.items objectAtIndex:2];
+
     
-    viewsDic=NSDictionaryOfVariableBindings(tabbar,item1,item2,item3,travellerLabel,logoutButton);
+    viewsDic=NSDictionaryOfVariableBindings(tabbar,item1,item2,item3,travellerLabel,logoutButton,barOnButtom);
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tabbar]|" options:0 metrics:nil views:viewsDic]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[tabbar(50)]" options:0 metrics:nil views:viewsDic]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[barOnButtom]|" options:0 metrics:nil views:viewsDic]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[barOnButtom(100)]|" options:0 metrics:nil views:viewsDic]];
     [tabbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[travellerLabel(70)]-[logoutButton(70)]|" options:NSLayoutFormatAlignAllCenterY metrics:nil views:viewsDic]];
     [tabbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[travellerLabel]|" options:0 metrics:nil views:viewsDic]];
 //    [tabbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-200-[item1]-[item2]-[item3]" options:0 metrics:nil views:viewsDic]];

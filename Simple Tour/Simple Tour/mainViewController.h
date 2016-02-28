@@ -11,11 +11,12 @@
 #import "purchasingDetailsVC.h"
 #import "DayOrderVC.h"
 #import "loginViewController.h"
+#import "buttomBar.h"
 @interface mainViewController : UIViewController
 <UITabBarDelegate>
 {
     UITabBar *tabbar;
-    
+    buttomBar *barOnButtom;
     UITabBarItem *item1;
     UITabBarItem *item2;
     UITabBarItem *item3;

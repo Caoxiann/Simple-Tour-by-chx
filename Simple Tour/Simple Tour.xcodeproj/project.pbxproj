@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A1710AE1C4F8D560045333A /* LeftTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1710AD1C4F8D560045333A /* LeftTableCell.m */; };
 		1A1710B31C4FCF500045333A /* detailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1710B21C4FCF500045333A /* detailsCell.m */; };
+		1A403D601C8035FE0010F2ED /* buttomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A403D5F1C8035FE0010F2ED /* buttomBar.m */; };
 		1A5FD1291C4CE94C00A30AD6 /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5FD1281C4CE94C00A30AD6 /* TableData.m */; };
 		1A6897121C7C7EDE003E4025 /* IMG_2158.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1A6897111C7C7EDE003E4025 /* IMG_2158.JPG */; };
 		1A7E73501C5C57C2006A0BCE /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E734F1C5C57C2006A0BCE /* mainViewController.m */; };
@@ -34,6 +35,8 @@
 		1A1710AD1C4F8D560045333A /* LeftTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableCell.m; sourceTree = "<group>"; };
 		1A1710B11C4FCF500045333A /* detailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailsCell.h; sourceTree = "<group>"; };
 		1A1710B21C4FCF500045333A /* detailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailsCell.m; sourceTree = "<group>"; };
+		1A403D5E1C8035FE0010F2ED /* buttomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buttomBar.h; sourceTree = "<group>"; };
+		1A403D5F1C8035FE0010F2ED /* buttomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buttomBar.m; sourceTree = "<group>"; };
 		1A5FD1271C4CE94C00A30AD6 /* TableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableData.h; sourceTree = "<group>"; };
 		1A5FD1281C4CE94C00A30AD6 /* TableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableData.m; sourceTree = "<group>"; };
 		1A6897111C7C7EDE003E4025 /* IMG_2158.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2158.JPG; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		1A1710B01C4F915C0045333A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				1A403D5E1C8035FE0010F2ED /* buttomBar.h */,
+				1A403D5F1C8035FE0010F2ED /* buttomBar.m */,
 				1A1710AC1C4F8D560045333A /* LeftTableCell.h */,
 				1A1710AD1C4F8D560045333A /* LeftTableCell.m */,
 				1A1710B11C4FCF500045333A /* detailsCell.h */,
@@ -248,6 +253,7 @@
 				1AE5B05E1C47FABB00EDE1A9 /* AppDelegate.m in Sources */,
 				1AE5B05B1C47FABB00EDE1A9 /* main.m in Sources */,
 				1ABA94031C520970002207A8 /* firstRightTable.m in Sources */,
+				1A403D601C8035FE0010F2ED /* buttomBar.m in Sources */,
 				1A8E03821C49463600757B6F /* travellerInfoVC.m in Sources */,
 				1A1710B31C4FCF500045333A /* detailsCell.m in Sources */,
 				1AE84CB41C53618A0021D7BC /* secondRightTable.m in Sources */,
